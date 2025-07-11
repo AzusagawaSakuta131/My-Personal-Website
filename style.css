@@ -1,63 +1,112 @@
-
 body {
-    font - family: Arial, sans-serif;
-    background: #f0f2f5;
+    font-family: Arial, sans-serif;
+    background: #F9F9F9;
     color: #333;
     margin: 0;
     padding: 0;
     text-align: center;
 }
 
-header {
-    background - color: #4a90e2;
-    padding: 2rem 1rem;
+.head{
+    position:relative;
+    padding: 3rem 1rem;
     color: black;
 }
+.hello {
+    position: absolute;
+    top: 4rem;
+    left: 50%;
+    transform: translate(-50%);
+    font-size: 2.5rem;
+    white-space: nowrap;
+    z-index: 1;
+    pointer-events: none;
+    background: linear-gradient(to right, black 50%, transparent 50%);
+    background-size: 200% 100%;
+    background-position:  0 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: background-position 2s ease;
+}
+.welcome{
+    position:absolute;
+    top:11rem;
+    left:50%;
+    transform:translate(-50%);
+}
 
-    header h1 {
-        margin: 0;
-        font-size: 2.5rem;
-    }
+.hiddenimage {
+    position: absolute;
+    width: 9rem;
+    z-index: 2;
+    transform: translate(-50%);
+    top: 3rem;
+    pointer-events: none;
+    transition-delay: 0s;
+    opacity:0;
+}
+
+.switch{
+    position:absolute;
+    top:3rem;
+    width:33rem;
+    height:9rem;
+    left:50%;
+    transform:translate(-50%);
+}
+
+.switch:hover ~ .hiddenimage {
+    opacity: 1;
+    transition-delay: 1s;
+}
+
+.switch:hover~.hello {
+    background-position: -100% 0;
+}
+
+
+
+
 
 section.social {
-    margin: 2rem auto;
+    margin: 13rem auto;
     max-width: 600px;
 }
 
-    section.social h2 {
-        font - size: 1.8rem;
-        margin-bottom: 1rem;
-    }
+section.social h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
 
 ul.social-list {
-    list - style: none;
+    list-style: none;
     padding: 0;
     display: flex;
     justify-content: center;
     gap: 20px;
 }
 
-    ul.social-list li {
-        display: inline-block;
-    }
+ul.social-list li {
+    display: inline-block;
+}
 
-    ul.social-list a {
-        text - decoration: none;
-        color: #333;
-        font-size: 1.2rem;
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        transition: color 0.3s;
-    }
+ul.social-list a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.3s;
+}
 
-        ul.social-list a:hover {
-            color: #4a90e2;
-        }
+ul.social-list a:hover {
+    color: #4a90e2;
+}
 
-    ul.social-list img {
-        width: 24px;
-        height: 24px;
-    }
+ul.social-list img {
+    width: 24px;
+    height: 24px;
+}
 
 
