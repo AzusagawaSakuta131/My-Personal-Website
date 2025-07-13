@@ -1,26 +1,19 @@
+* {
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+}
+
 body {
     font-family: Arial, sans-serif;
     background: #F9F9F9;
     color: #333;
-    margin: 0;
-    padding: 0;
     text-align: center;
 }
 
-.head{
-    position:relative;
-    padding: 3rem 1rem;
-    color: black;
-}
 .hello {
-    position: absolute;
-    top: 4rem;
-    left: 50%;
-    transform: translate(-50%);
     font-size: 2.5rem;
-    white-space: nowrap;
-    z-index: 1;
-    pointer-events: none;
+
     background: linear-gradient(to right, black 50%, transparent 50%);
     background-size: 200% 100%;
     background-position:  0 100%;
@@ -28,39 +21,22 @@ body {
     -webkit-text-fill-color: transparent;
     transition: background-position 2s ease;
 }
-.welcome{
-    position:absolute;
-    top:11rem;
-    left:50%;
-    transform:translate(-50%);
-}
 
 .hiddenimage {
-    position: absolute;
     width: 9rem;
     z-index: 2;
-    transform: translate(-50%);
-    top: 3rem;
     pointer-events: none;
     transition-delay: 0s;
-    opacity:0;
+    opacity: 0;
 }
 
-.switch{
-    position:absolute;
-    top:3rem;
-    width:33rem;
-    height:9rem;
-    left:50%;
-    transform:translate(-50%);
-}
 
-.switch:hover ~ .hiddenimage {
+.hello:hover ~ .hiddenimage {
     opacity: 1;
-    transition-delay: 1s;
+    transition-delay: 0.5s;
 }
 
-.switch:hover~.hello {
+.hello:hover {
     background-position: -100% 0;
 }
 
@@ -69,7 +45,7 @@ body {
 
 
 section.social {
-    margin: 13rem auto;
+    margin: 3rem auto;
     max-width: 600px;
 }
 
