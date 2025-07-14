@@ -19,25 +19,23 @@ body {
     background-size:contain;
 }
 .hello {
-    height:100%;
-    width:100%;
-    display:flex;
-    justify-content:center;
-    align-items:center;
+    height: 100%;
+    width: 90%;
+    max-width: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 2.5rem;
-    background: linear-gradient(to right, black 50%, transparent 50%);
-    background-size: 200% 100%;
-    background-position:  0 100%;
+    background: linear-gradient(to right,black 25%,#4a90e2 30%,#4a90e2 70%,black 75%,black 100%);
+    background-size: 400% 100%;
+    background-position: 0 100%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    transition: background-position 2s ease;
+    transition: background-position 1.5s ease;
 }
-.container:hover  {
-    background: url(resources/Photo.jpg) center no-repeat;
-    background-size:contain;
-}
+
 .container:hover .hello{
-    background-position: -100% 0;
+    background-position: -150% 0;
 }
 
 
@@ -86,3 +84,50 @@ ul.social-list img {
 }
 
 
+/* 你原来的代码保持不变，下面是新增的响应式部分 */
+
+/* 响应式：屏幕宽度小于等于600px时 */
+@media (max-width: 600px) {
+    .container {
+        height: 6rem; /* 容器高度稍微减小 */
+        padding: 0 1rem; /* 两侧留点内边距 */
+    }
+
+    .hello {
+        font-size: 1.8rem; /* 字体变小，更适合手机 */
+        width: 100%; /* 宽度撑满容器 */
+        max-width: none; /* 取消最大宽度限制 */
+        background-size: 300% 100%; /* 适当调整背景尺寸 */
+    }
+
+    section.social {
+        max-width: 100%; /* 社交区宽度撑满 */
+        padding: 0 1rem; /* 两侧留点内边距 */
+    }
+
+    ul.social-list {
+        flex-wrap: wrap; /* 超窄屏幕自动换行 */
+        gap: 12px; /* 缩小间距 */
+        justify-content: center;
+    }
+
+        ul.social-list li {
+            flex: 1 1 45%; /* 每个图标链接约占45%宽度，2列排布 */
+            max-width: 45%;
+            text-align: center;
+        }
+
+        ul.social-list a {
+            font-size: 1rem; /* 社交链接字体变小 */
+        }
+
+        ul.social-list img {
+            width: 20px; /* 图标稍微小一点 */
+            height: 20px;
+        }
+
+    .welcome {
+        font-size: 1.1rem; /* 欢迎文本字体变小 */
+        padding: 0 1rem;
+    }
+}
